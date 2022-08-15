@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>黑哥爬杆</title>
+		<style>
+			div{
+				text-align: center;
+				font-size: 50px;
+			}
+			button{
+				width: 250px;
+				height: 150px;
+				font-size: 50px;
+				border-radius: 10%;
+				margin-left: 350px;
+				margin-top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="font-size: 90px;">黑哥爬杆v1.0</div><br>
+		<div>黑哥遇到困难了！因为工作他需要1分钟之内爬到10米以上高的电线杆，快来帮助她吧！</div><br>
+		<div>玩法：你需要疯狂点击“爬”按钮让黑哥爬上电线杆，但是要注意不能太快了，不然黑哥会很害怕！
+		注意不可以让右上角的恐惧值达到100！</div><br>
+		<div>本游戏以庆祝黑哥顺利通过考试，如有雷同，不太可能</div><br>
+		<div style="color: cornflowerblue;">by~彬</div><br><br>
+		<button onclick="ready()">开始游戏</button>
+		<audio src="lb.wav" id="bgaudio" ></audio>
+		<script>
+			function ready(){
+				document.getElementById("bgaudio").play();
+				alert('开始！！')
+				window.location.href = 'demo.html'
+			}
+		</script>
+	</body>
+</html>

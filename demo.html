@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no">
+		<title>黑哥爬杆</title>
+		<style>
+			#a1{
+				width: 200px;
+				height: 1600px;
+				background-color: aquamarine;
+				position: absolute;
+			}
+			#b1{
+				width: 440px;
+				height: 140px;
+				position: relative;
+				left: 200px;
+				top: 1460px;
+			}
+			#btn{
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				border: 3px solid red;
+				position: relative;
+				left:250px;
+				top: 1200px;
+			}
+		</style>
+		<script>
+			// window.addEventListener('load',function(){
+				
+				
+			// })
+		</script>
+	</head>
+	<body>
+		<div id="a1" style="font-size: 35px;line-height: 1800px;">
+			我是电线杆
+		</div>
+		<div id="b1">
+			<div style="float: left;">
+				<div id="heige" style="float: left;"  onclick="ready()">
+				<img id="imghg" src="hg1.png" style="width: 140px;height: 140px;">
+				</div>
+			</div>
+			<div id="h1" style="width: 300px;height: 140px;float: left;
+			display: none;font-size: 50px;">
+			好高啊我好怕555</div>
+		</div>
+		<button id="btn" style="font-size: 100px;">爬</button>
+		<div id="t1" style="width: 190px;position: relative;left: 700px;top: -150px;font-size: 50px;">
+			
+		</div>
+		
+		<div id="t2" style="width: 290px;position: relative;left: 440px;top: -550px;font-size: 50px;">
+			倒计时：
+		</div>
+		<div id="tsy" style="width: 290px;position: relative;left:450px;display: none; font-size: 50px;">
+			
+		</div>
+		<audio src="ngm.wav" id="bgaudio" style="float: right;"></audio>
+		<div id="xsy" style="position: relative;
+		left: 600px;
+		top: 200px;display: none;" >
+			<div style="font-size: 50px;width: 290px">薛仙女来给你加油了哦，黑哥,爱你呦❤</div>
+			<img src="xsy.jpg" style=" width: 140px;height: 140px;"/>
+		</div>
+	<script>
+		var speed = 30
+		var flag = true
+		var flag2 = true
+		var btn = document.querySelector('#btn')
+		var b1 = document.querySelector('#b1')
+		var t1 = document.querySelector('#t1')
+		var h1 = document.querySelector('#h1')
+		var test = 0
+		var time = 50
+		
+		
+		btn.addEventListener('click',function(){
+			b1.style.top = b1.offsetTop - speed +'px'
+			console.log( b1.offsetTop )
+		})
+		setInterval(function(){
+			if(b1.offsetTop ==500 && flag){
+				if(test != 0 ){
+					clearTimeout(timeout)
+					}
+				
+				clearInterval(interv)
+				h1.style.display = 'block'
+				flag = false
+				speed = 10
+				tsy.innerText='黑哥爬到了8米处，往下一看吓了一跳！因此爬杆速度爆减弱，恐惧+10'
+				tsy.style.display = 'block'
+				setTimeout(function(){
+					h1.style.display = 'none'
+					tsy.style.display = 'none'
+				},10000)
+				
+				test += 10
+				t1.innerText = '黑哥的恐惧值：' + test
+			}
+		},30)
+		
+		t1.innerText = '黑哥的恐惧值：' + test
+		timeover = setInterval(function(){
+			t2.innerText = '倒计时:' + time
+			if(time > 0){
+				time--
+			}
+			else{
+				clearInterval(timeover)
+				alert('时间到了！很遗憾,黑哥挂了！')
+				window.location.href = 'index.html'
+			}
+		},1000)
+		
+		let after = b1.offsetTop
+		interv = setInterval(function(){
+			let now = b1.offsetTop
+			if(after - now > 30){
+				tsy.style.display = 'block'
+				tsy.innerText = '你爬的太快了，黑哥怕怕了！恐惧值+25'
+				timeout = setTimeout(function(){
+					tsy.style.display = 'none'
+				},3000)
+				test +=25
+				t1.innerText = '黑哥的恐惧值：' + test
+			}
+			after = now
+		},300)
+		
+		
+		gameover = setInterval(function(){
+				if(test >=100){
+					clearInterval(gameover)
+					setInterval(function(){
+							if(b1.offsetTop<1446){
+							b1.style.top = b1.offsetTop + 20 + 'px'
+				}
+							else{
+								if(flag2){
+								flag2 = false
+								document.getElementById("bgaudio").play();
+								alert('黑哥因为恐惧之极吓尿掉了下去！！！愿天堂没有电线杆，gameover！')
+								window.location.href = 'index.html'
+					}
+					
+				}
+			},50)
+				}
+			},30)
+			
+		gamewin = setInterval(function(){
+			if(b1.offsetTop <= 20){
+				clearInterval(gamewin)
+				alert('哇，您成功了！！黑哥爬上了杆顶，非常高兴，于是黑哥送了您一份惊喜的礼品，请点击确认后等待5秒后查收哦~')
+				window.location.href = 'https://91x17.cc/categories/chinese/59?sort=1&area=0&is_hd_video=0'
+			}
+		},50)
+		
+		function ready(){
+			if(time <=30){
+				speed = 40
+				var heige = document.querySelectorAll("#heige")
+				xsy.style.display = 'block'
+				t1.innerText = "黑哥的兴奋值:100"
+				tsy.innerText = '黑哥的女神出现了！黑哥速度max开始冲刺！'
+				tsy.style.display = 'block'
+				clearInterval(interv)
+				clearTimeout(timeover)
+				var imghg = document.querySelector("#imghg")
+				imghg.src = 'hg2.png'
+			}
+			
+		}
+	</script>
+	</body>
+</html>
